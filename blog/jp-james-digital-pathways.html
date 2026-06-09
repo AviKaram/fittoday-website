@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Digital Pathways No One Is Talking About — FitToday</title>
+  <meta name="description" content="JP James, nonprofit leader focused on child trafficking, on how digital vulnerability and mental health neglect create pathways to exploitation.">
+  <meta name="author" content="JP James">
+
+  <meta property="og:type"        content="article">
+  <meta property="og:url"         content="https://fittoday.co/blog/jp-james-digital-pathways.html">
+  <meta property="og:title"       content="The Digital Pathways No One Is Talking About — FitToday">
+  <meta property="og:description" content="JP James on how digital vulnerability and mental health neglect create pathways to exploitation.">
+  <meta property="og:image"       content="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=85">
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    .post-header {
+      padding: 8rem 5% 4rem; background: var(--white);
+      max-width: 860px; margin: 0 auto;
+    }
+    .post-category {
+      font-size: 0.68rem; font-weight: 500; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; display: block;
+    }
+    .post-title {
+      font-family: 'Fraunces', serif; font-weight: 500;
+      font-size: clamp(2rem, 5vw, 3.75rem);
+      line-height: 1.08; letter-spacing: -0.03em; color: var(--ink); margin-bottom: 2rem;
+    }
+    .post-title em { font-style: italic; color: var(--accent); font-weight: 400; }
+    .post-byline {
+      display: flex; align-items: center; gap: 1rem;
+      padding-top: 1.75rem; border-top: 1px solid var(--border);
+    }
+    .byline-avatar {
+      width: 46px; height: 46px; border-radius: 50%;
+      background: var(--paper); border: 1px solid var(--border-2);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fraunces', serif; font-weight: 500;
+      font-size: 0.85rem; color: var(--ink); flex-shrink: 0;
+    }
+    .byline-name { font-size: 0.92rem; font-weight: 500; color: var(--ink); }
+    .byline-meta { font-size: 0.78rem; color: var(--ink-3); margin-top: 0.2rem; font-weight: 300; }
+
+    .coming-soon-section { max-width: 680px; margin: 0 auto 6rem; padding: 0 5%; }
+    .coming-soon-banner {
+      background: var(--paper); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0; padding: 2rem 2.25rem; margin-bottom: 3rem;
+    }
+    .coming-soon-badge {
+      font-size: 0.63rem; font-weight: 500; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; display: block;
+    }
+    .coming-soon-heading {
+      font-family: 'Fraunces', serif; font-weight: 500;
+      font-size: 1.4rem; color: var(--ink); letter-spacing: -0.015em;
+      line-height: 1.25; margin-bottom: 0.85rem;
+    }
+    .coming-soon-body { font-size: 0.95rem; color: var(--ink-2); line-height: 1.7; font-weight: 300; }
+    .coming-soon-actions { display: flex; gap: 0.85rem; flex-wrap: wrap; margin-top: 1.5rem; }
+
+    .post-footer { background: var(--paper); border-top: 1px solid var(--border); padding: 4rem 5%; }
+    .post-footer-inner { max-width: 680px; margin: 0 auto; }
+    .post-footer-label {
+      font-size: 0.68rem; font-weight: 500; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--ink-3); margin-bottom: 1.25rem; display: block;
+    }
+    .post-footer-heading {
+      font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.65rem;
+      color: var(--ink); letter-spacing: -0.02em; margin-bottom: 0.75rem;
+    }
+    .post-footer-heading em { font-style: italic; color: var(--accent); }
+    .post-footer-sub { font-size: 0.92rem; color: var(--ink-2); line-height: 1.65; font-weight: 300; margin-bottom: 2rem; }
+
+    @media (max-width: 960px) { .post-header { padding: 7rem 5% 3rem; } }
+    @media (max-width: 600px) { .post-title { font-size: 2rem; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">FitToday</a>
+    <ul class="nav-links">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/#access">App &amp; Book</a></li>
+      <li><a href="/#subscribe" class="nav-cta">Subscribe</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/#about"         onclick="closeMobile()">About</a>
+    <a href="/resources.html" onclick="closeMobile()">Resources</a>
+    <a href="/blog/"          onclick="closeMobile()">Blog</a>
+    <a href="/#access"        onclick="closeMobile()">App &amp; Book</a>
+    <a href="/#subscribe"     onclick="closeMobile()">Subscribe</a>
+  </div>
+
+  <header class="post-header">
+    <span class="post-category">Technology &amp; Exploitation</span>
+    <h1 class="post-title">
+      "The Digital Pathways No One Is Talking About: <em>How Online Vulnerability Fuels Trafficking</em>"
+    </h1>
+    <div class="post-byline">
+      <div class="byline-avatar">JJ</div>
+      <div>
+        <div class="byline-name">JP James</div>
+        <div class="byline-meta">Nonprofit Leader · Child Trafficking Advocate</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="coming-soon-section">
+    <div class="coming-soon-banner">
+      <span class="coming-soon-badge">Coming Soon</span>
+      <h2 class="coming-soon-heading">This essay is on its way.</h2>
+      <p class="coming-soon-body">
+        JP James works at the intersection of digital vulnerability, mental health, and child exploitation. His essay for FitToday will explore the connection most public health conversations are missing: how neglected mental health creates the exact conditions that traffickers exploit, and what that means for the way we talk to young people about safety online.
+      </p>
+      <p class="coming-soon-body" style="margin-top:1rem;">
+        Subscribe below to hear when it publishes.
+      </p>
+      <div class="coming-soon-actions">
+        <a href="/#subscribe" class="btn-dark">Get Notified →</a>
+        <a href="/blog/" class="btn-out">Back to Blog</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-footer">
+    <div class="post-footer-inner">
+      <span class="post-footer-label">Read More</span>
+      <h2 class="post-footer-heading">More from <em>FitToday.</em></h2>
+      <p class="post-footer-sub">Essays, interviews, and perspectives on youth mental health — honest conversations about what this generation is facing.</p>
+      <div style="display:flex;gap:0.85rem;flex-wrap:wrap;">
+        <a href="/blog/" class="btn-dark">All Posts →</a>
+        <a href="/#subscribe" class="btn-out">Subscribe</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <p class="footer-logo">FitToday</p>
+        <p class="footer-tagline">Youth mental health for a new era. Founded 2020.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <p class="footer-col-title">Navigate</p>
+          <a href="/#about">About</a>
+          <a href="/resources.html">Resources</a>
+          <a href="/blog/">Blog</a>
+          <a href="/#access">App &amp; Book</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Connect</p>
+          <a href="https://www.instagram.com/fit2day_official/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.linkedin.com/company/fittoday-co/about/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://fittoday.health" target="_blank" rel="noopener">FitToday App</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Legal</p>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 FitToday. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/fit2day_official/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/fittoday-co/about/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

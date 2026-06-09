@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mental Health Resources — FitToday</title>
+  <meta name="description" content="A curated directory of mental health resources for young people, families, and caregivers. Crisis lines, youth-specific organizations, LGBTQ+ support, and more.">
+  <meta name="author" content="Avi Karamchandani">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://fittoday.co/resources.html">
+  <meta property="og:title"       content="Mental Health Resources — FitToday">
+  <meta property="og:description" content="A curated directory of mental health resources for young people, families, and caregivers.">
+  <meta property="og:image"       content="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=85">
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* PAGE HEADER */
+    .res-page-header {
+      padding: 8rem 5% 5rem;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* CRISIS BANNER */
+    .crisis-banner {
+      background: var(--paper);
+      border-left: 3px solid var(--accent);
+      padding: 1.5rem 2rem;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 4rem;
+    }
+    .crisis-banner-title {
+      font-family: 'Fraunces', serif; font-weight: 500;
+      font-size: 1.15rem; color: var(--ink); margin-bottom: 0.5rem;
+    }
+    .crisis-banner-body { font-size: 0.95rem; color: var(--ink-2); line-height: 1.65; font-weight: 300; }
+    .crisis-banner-body strong { color: var(--ink); font-weight: 600; }
+    .crisis-banner-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.25rem; }
+    .crisis-action {
+      font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 500;
+      color: var(--white); background: var(--accent); text-decoration: none;
+      padding: 0.6rem 1.25rem; border-radius: 3px; border: 1px solid var(--accent);
+      transition: background 0.2s;
+    }
+    .crisis-action:hover { background: #153d24; }
+    .crisis-action.outline {
+      color: var(--ink); background: var(--white); border-color: var(--border-2);
+    }
+    .crisis-action.outline:hover { background: var(--ink); color: var(--white); border-color: var(--ink); }
+
+    /* DISCLAIMER */
+    .disclaimer {
+      background: var(--warm); border: 1px solid var(--border);
+      border-radius: 6px; padding: 1.25rem 1.5rem; margin-bottom: 4rem;
+    }
+    .disclaimer p { font-size: 0.85rem; color: var(--ink-3); line-height: 1.65; font-weight: 300; }
+    .disclaimer strong { color: var(--ink-2); font-weight: 500; }
+
+    /* RESOURCE CATEGORIES */
+    #resource-categories { padding: 5rem 5% 7rem; background: var(--paper); }
+
+    .res-category { margin-bottom: 5rem; }
+    .res-category:last-child { margin-bottom: 0; }
+
+    .res-category-header {
+      display: flex; align-items: baseline; gap: 1.5rem;
+      margin-bottom: 2rem; padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .res-category-title {
+      font-family: 'Fraunces', serif; font-weight: 500;
+      font-size: 1.65rem; color: var(--ink); letter-spacing: -0.015em;
+    }
+    .res-category-count {
+      font-size: 0.72rem; font-weight: 500; color: var(--ink-4);
+      letter-spacing: 0.1em; text-transform: uppercase;
+    }
+
+    .res-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+
+    .res-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 6px; padding: 1.75rem; transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .res-card:hover { border-color: var(--border-2); box-shadow: 0 4px 16px -8px rgba(10,10,10,0.07); }
+
+    .res-card-name {
+      font-weight: 600; font-size: 1rem; color: var(--ink);
+      margin-bottom: 0.4rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .res-card-name a { text-decoration: none; transition: color 0.2s; }
+    .res-card-name a:hover { color: var(--accent); }
+
+    .res-card-tagline {
+      font-size: 0.82rem; color: var(--accent); font-weight: 500;
+      margin-bottom: 0.85rem; font-style: italic;
+    }
+
+    .res-card-desc {
+      font-size: 0.88rem; color: var(--ink-2); line-height: 1.65;
+      font-weight: 300; margin-bottom: 1.25rem;
+    }
+
+    .res-card-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .res-card-action {
+      font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 500;
+      color: var(--ink); text-decoration: none; padding: 0.4rem 0.9rem;
+      border: 1px solid var(--border-2); border-radius: 3px;
+      transition: background 0.2s, color 0.2s, border-color 0.2s; white-space: nowrap;
+    }
+    .res-card-action:hover { background: var(--ink); color: var(--white); border-color: var(--ink); }
+    .res-card-action.primary { background: var(--ink); color: var(--white); border-color: var(--ink); }
+    .res-card-action.primary:hover { background: #2A2A2A; }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .res-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">FitToday</a>
+    <ul class="nav-links">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/#access">App &amp; Book</a></li>
+      <li><a href="/#subscribe" class="nav-cta">Subscribe</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/#about"        onclick="closeMobile()">About</a>
+    <a href="/resources.html" onclick="closeMobile()">Resources</a>
+    <a href="/blog/"         onclick="closeMobile()">Blog</a>
+    <a href="/#access"       onclick="closeMobile()">App &amp; Book</a>
+    <a href="/#subscribe"    onclick="closeMobile()">Subscribe</a>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="res-page-header">
+    <div class="container">
+      <span class="label reveal">Mental Health Resources</span>
+      <h1 class="section-h2 reveal d1" style="font-size:clamp(2.25rem,5vw,4rem);max-width:none;">
+        If you need help, <em>help is here.</em>
+      </h1>
+      <p class="section-sub reveal d2" style="max-width:700px;margin-top:1.5rem;">
+        This directory is curated by FitToday and updated regularly. Every organization and crisis line listed here has been selected because of the quality and accessibility of the support it provides. If you or someone you know is struggling, please reach out.
+      </p>
+    </div>
+  </header>
+
+  <!-- MAIN RESOURCE CONTENT -->
+  <main>
+    <div style="padding:5rem 5% 0; background:var(--paper);">
+      <div class="container">
+
+        <!-- CRISIS BANNER -->
+        <div class="crisis-banner reveal">
+          <h2 class="crisis-banner-title">In a crisis right now?</h2>
+          <p class="crisis-banner-body">
+            If you or someone you know is in immediate danger, call <strong>911</strong>. If you are having thoughts of suicide or self-harm, call or text <strong>988</strong> — the Suicide and Crisis Lifeline is free, confidential, and available 24/7 anywhere in the United States.
+          </p>
+          <div class="crisis-banner-actions">
+            <a href="tel:988" class="crisis-action">Call or Text 988</a>
+            <a href="sms:741741?body=HOME" class="crisis-action outline">Text HOME to 741741</a>
+          </div>
+        </div>
+
+        <!-- DISCLAIMER -->
+        <div class="disclaimer reveal">
+          <p>
+            <strong>Important note:</strong> This directory is curated for informational purposes and does not constitute professional medical or mental health advice. The resources listed here are starting points — not substitutes for working with a licensed mental health professional. If you are supporting a young person in crisis, please connect with a qualified provider.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <section id="resource-categories">
+      <div class="container">
+
+        <!-- 1. CRISIS SUPPORT -->
+        <div class="res-category">
+          <div class="res-category-header reveal">
+            <h2 class="res-category-title">Crisis Support</h2>
+            <span class="res-category-count">4 resources</span>
+          </div>
+          <div class="res-cards">
+
+            <div class="res-card reveal">
+              <div class="res-card-name"><a href="https://988lifeline.org" target="_blank" rel="noopener">988 Suicide &amp; Crisis Lifeline</a></div>
+              <p class="res-card-tagline">Call or text 988, 24/7</p>
+              <p class="res-card-desc">The national lifeline connects anyone in distress with trained crisis counselors — free, confidential, and available around the clock. You can call, text, or chat online. Veterans, LGBTQ+ individuals, and Spanish speakers have dedicated options.</p>
+              <div class="res-card-actions">
+                <a href="tel:988" class="res-card-action primary">Call 988</a>
+                <a href="https://988lifeline.org" target="_blank" rel="noopener" class="res-card-action">Visit Site</a>
+              </div>
+            </div>
+
+            <div class="res-card reveal d1">
+              <div class="res-card-name"><a href="https://www.crisistextline.org" target="_blank" rel="noopener">Crisis Text Line</a></div>
+              <p class="res-card-tagline">Text HOME to 741741, 24/7</p>
+              <p class="res-card-desc">For people who would rather text than talk, Crisis Text Line connects you with a trained crisis counselor entirely over text message. Available around the clock and completely free. Particularly accessible for young people in situations where calling feels impossible.</p>
+              <div class="res-card-actions">
+                <a href="sms:741741?body=HOME" class="res-card-action primary">Text HOME to 741741</a>
+                <a href="https://www.crisistextline.org" target="_blank" rel="noopener" class="res-card-action">Visit Site</a>
+              </div>
+            </div>
+
+            <div class="res-card reveal">
+              <div class="res-card-name"><a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank" rel="noopener">SAMHSA National Helpline</a></div>
+              <p class="res-card-tagline">1-800-662-4357, 24/7, free and confidential</p>
+              <p class="res-card-desc">The Substance Abuse and Mental Health Services Administration's national helpline provides free, confidential treatment referrals and information for individuals and families dealing with mental health or substance use disorders. Available in English and Spanish, 24 hours a day, 365 days a year.</p>
+              <div class="res-card-actions">
+                <a href="tel:18006624357" class="res-card-action primary">Call 1-800-662-4357</a>
+                <a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank" rel="noopener" class="res-card-action">Visit Site</a>
+              </div>
+            </div>
+
+            <div class="res-card reveal d1">
+              <div class="res-card-name"><a href="https://www.nami.org/Support-Education/NAMI-HelpLine" target="_blank" rel="noopener">NAMI HelpLine</a></div>
+              <p class="res-card-tagline">1-800-950-6264, Mon–Fri 10am–10pm ET</p>
+              <p class="res-card-desc">The National Alliance on Mental Illness runs a free peer-support phone line staffed by trained volunteers with lived mental health experience. Best for people who want to talk through a non-emergency situation, get information about diagnoses, or find local resources and support groups.</p>
+              <div class="res-card-actions">
+                <a href="tel:18009506264" class="res-card-action primary">Call 1-800-950-6264</a>
+                <a href="https://www.nami.org/Support-Education/NAMI-HelpLine" target="_blank" rel="noopener" class="res-card-action">Visit Site</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 2. YOUTH-SPECIFIC ORGANIZATIONS -->
+        <div class="res-category">
+          <div class="res-category-header reveal">
+            <h2 class="res-category-title">Youth-Specific Organizations</h2>
+            <span class="res-category-count">4 resources</span>
+          </div>
+          <div class="res-cards">
+
+            <div class="res-card reveal">
+              <div class="res-card-name"><a href="https://jedfoundation.org" target="_blank" rel="noopener">The JED Foundation</a></div>
+              <p class="res-card-tagline">Mental health and suicide prevention for teens and young adults</p>
+              <p class="res-card-desc">JED works directly with schools and colleges to strengthen mental health programs, crisis response systems, and support networks for students. Their website has guides for students, parents, and educators — including resources on what to do when a friend seems to be struggling.</p>
+              <div class="res-card-actions">
+                <a href="https://jedfoundation.org" target="_blank" rel="noopener" class="res-card-action primary">Visit JED Foundation</a>
+              </div>
+            </div>
+
+            <div class="res-card reveal d1">
+              <div class="res-card-name"><a href="https://www.activeminds.org" target="_blank" rel="noopener">Active Minds</a></div>
+              <p class="res-card-tagline">The nation's leading student mental health nonprofit</p>
+              <p class="res-card-desc">Active Minds operates on college and high school campuses across the country, training student advocates and reducing the stigma that keeps young people from seeking help. If you're in college, check whether your campus has a chapter. Their Send Silence Packing exhibit is one of the most powerful public mental health awareness campaigns in the country.</p>
+              <div class="res-card-actions">
+                <a href="https://www.activeminds.org" target="_blank" rel="noopener" class="res-card-action primary">Visit Active Minds</a>
+              </div>
+            </div>
+
+            <div class="res-card reveal">
+              <div class="res-card-name"><a href="https://mhanational.org" target="_blank" rel="noopener">Mental Health America</a></div>
+              <p class="res-card-tagline">Advocacy, education, and free screening tools since 1909</p>
+              <p class="res-card-desc">MHA is the oldest and largest community-based mental health organization in the country. Their website has free, evidence-based screening tools for depression, anxiety, PTSD, and more — useful if you're trying to understand what you're experiencing before talking to a professional. They also run advocacy campaigns for systemic change.</p>
+              <div class="res-card-actions">
+                <a href="https://mhanational.org/mental-health-screening" target="_blank" rel="noopener" class="res-card-action primary">Free Screenings</a>
+                <a href="https://mhanational.org" target="_blank" rel="noopener" class="res-card-action">Visit Site</a>
+              </div>
+            </div>
+
+            <div class="res-card reveal d1">
+              <div class="res-card-name"><a href="https://afsp.org" target="_blank" rel="noopener">American Foundation for Suicide Prevention</a></div>
+              <p class="res-card-tagline">Research, advocacy, and support for loss survivors</p>
+              <p class="res-card-desc">AFSP funds research, trains communities in suicide prevention, and supports people who have lost someone to suicide. Their "Talk Away the Dark" campaign and the Out of the Darkness walks have helped reframe suicide prevention as a community responsibility rather than an individual failure. Their resources for loss survivors are among the best available.</p>
+              <div class="res-card-actions">
+                <a href="https://afsp.org" target="_blank" rel="noopener" class="res-card-action primary">Visit AFSP</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 3. LGBTQ+ RESOURCES -->
+        <div class="res-category">
+          <div class="res-category-header reveal">
+            <h2 class="res-category-title">LGBTQ+ Resources</h2>
+            <span class="res-category-count">3 resources</span>
+          </div>
+          <div class="res-cards">
+
+            <div class="res-card reveal">
+              <div class="res-card-name"><a href="https://www.thetrevorproject.org" target="_blank" rel="noopener">The Trevor Project</a></div>
+              <p class="res-card-tagline">Crisis intervention for LGBTQ+ youth, 24/7</p>
+              <p class="res-card-desc">The Trevor Project is the world's largest suicide prevention organization focused on LGBTQ+ young people. TrevorLifeline (1-866-488-7386), TrevorText (text START to 678-678), and TrevorChat are all available 24/7. They also run TrevorSpace, a safe online community for LGBTQ+ youth ages 13 to 24.</p>
+              <div class="res-card-actions">
+                <a href="tel:18664887386" class="res-card-action primary">Call 1-866-488-7386</a>
+                <a href="https://www.thetrevorproject.org" target="_blank" rel="noopener" class="res-card-action">Visit Site</a>
+              </div>
+            </div>
+
+            <div class="res-card reveal d1">
+              <div class="res-card-name"><a href="https://pflag.org" target="_blank" rel="noopener">PFLAG</a></div>
+              <p class="res-card-tagline">Support for LGBTQ+ people and their families</p>
+              <p class="res-card-desc">PFLAG's network of over 400 chapters connects LGBTQ+ individuals and their families with in-person support groups across the country. Their resources for parents and caregivers are especially valuable — the transition to being a supportive family member is not always straightforward, and PFLAG provides guidance and community for that process.</p>
+              <div class="res-card-actions">
+                <a href="https://pflag.org/find-a-chapter/" target="_blank" rel="noopener" class="res-card-action primary">Find a Chapter</a>
+                <a href="https://pflag.org" target="_blank" rel="noopener" class="res-card-action">Visit Site</a>
+              </div>
+            </div>
+
+            <div class="res-card reveal">
+              <div class="res-card-name"><a href="https://www.glsen.org" target="_blank" rel="noopener">GLSEN</a></div>
+              <p class="res-card-tagline">Safe schools for LGBTQ+ students</p>
+              <p class="res-card-desc">GLSEN works to ensure K-12 schools are safe, affirming environments for LGBTQ+ students. Their research on school climate is some of the most rigorous available, and their resources for students — including guidance on starting GSAs and knowing your legal rights — are practical and clearly written. Educators and school administrators will also find a lot here.</p>
+              <div class="res-card-actions">
+                <a href="https://www.glsen.org" target="_blank" rel="noopener" class="res-card-action primary">Visit GLSEN</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 4. FAMILY AND CAREGIVER RESOURCES -->
+        <div class="res-category">
+          <div class="res-category-header reveal">
+            <h2 class="res-category-title">Family &amp; Caregiver Resources</h2>
+            <span class="res-category-count">3 resources</span>
+          </div>
+          <div class="res-cards">
+
+            <div class="res-card reveal">
+              <div class="res-card-name"><a href="https://www.nami.org/Support-Education/Mental-Health-Education/NAMI-Family-to-Family" target="_blank" rel="noopener">NAMI Family-to-Family</a></div>
+              <p class="res-card-tagline">Free education program for families</p>
+              <p class="res-card-desc">This eight-session program run by NAMI is specifically designed for family members, caregivers, and loved ones of people with mental health conditions. Led by trained family members who have been through it themselves, it covers everything from understanding diagnoses to communicating effectively during a crisis. Free of charge.</p>
+              <div class="res-card-actions">
+                <a href="https://www.nami.org/Support-Education/Mental-Health-Education/NAMI-Family-to-Family" target="_blank" rel="noopener" class="res-card-action primary">Learn More</a>
+              </div>
+            </div>
+
+            <div class="res-card reveal d1">
+              <div class="res-card-name"><a href="https://childmind.org" target="_blank" rel="noopener">Child Mind Institute</a></div>
+              <p class="res-card-tagline">Mental health resources for children, teens, and parents</p>
+              <p class="res-card-desc">Child Mind Institute's website is one of the best free resources available for parents trying to understand what a child is experiencing. Their guides on anxiety, ADHD, depression, and trauma are written clearly, cover the latest research, and don't talk down to readers. They also operate clinics in New York and San Francisco for those who need more direct support.</p>
+              <div class="res-card-actions">
+                <a href="https://childmind.org/topics/for-parents/" target="_blank" rel="noopener" class="res-card-action primary">Resources for Parents</a>
+                <a href="https://childmind.org" target="_blank" rel="noopener" class="res-card-action">Visit Site</a>
+              </div>
+            </div>
+
+            <div class="res-card reveal">
+              <div class="res-card-name"><a href="https://www.dbsalliance.org" target="_blank" rel="noopener">Depression and Bipolar Support Alliance</a></div>
+              <p class="res-card-tagline">Peer-led support groups nationwide</p>
+              <p class="res-card-desc">DBSA runs peer-led support groups for people with depression and bipolar disorder, as well as groups specifically for their family members and friends. The peer model — where group leaders have lived experience with the conditions being discussed — is genuinely different from clinical settings and is particularly valuable for caregivers who feel isolated in their experience.</p>
+              <div class="res-card-actions">
+                <a href="https://www.dbsalliance.org/support/chapters-and-support-groups/find-a-support-group/" target="_blank" rel="noopener" class="res-card-action primary">Find a Support Group</a>
+                <a href="https://www.dbsalliance.org" target="_blank" rel="noopener" class="res-card-action">Visit Site</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 5. EDUCATIONAL RESOURCES -->
+        <div class="res-category">
+          <div class="res-category-header reveal">
+            <h2 class="res-category-title">Educational Resources</h2>
+            <span class="res-category-count">3 resources</span>
+          </div>
+          <div class="res-cards">
+
+            <div class="res-card reveal">
+              <div class="res-card-name"><a href="https://www.nimh.nih.gov/health" target="_blank" rel="noopener">NIMH — Health Information</a></div>
+              <p class="res-card-tagline">The science of mental health, from the national institute</p>
+              <p class="res-card-desc">The National Institute of Mental Health publishes plain-language guides on virtually every mental health condition, based on the most current research. If you want to understand what a diagnosis means, what treatments have evidence behind them, or what the statistics look like, this is the most authoritative free source available.</p>
+              <div class="res-card-actions">
+                <a href="https://www.nimh.nih.gov/health" target="_blank" rel="noopener" class="res-card-action primary">Visit NIMH</a>
+              </div>
+            </div>
+
+            <div class="res-card reveal d1">
+              <div class="res-card-name"><a href="https://www.half-of-us.com" target="_blank" rel="noopener">Half of Us</a></div>
+              <p class="res-card-tagline">Mental health stories from real college students</p>
+              <p class="res-card-desc">A campaign focused on reducing stigma among college students by sharing real stories from real people. The name comes from the statistic that nearly half of all college students report experiencing a mental health crisis during their time in school. The site includes personal accounts and resources for students who may be struggling but haven't spoken up yet.</p>
+              <div class="res-card-actions">
+                <a href="https://www.half-of-us.com" target="_blank" rel="noopener" class="res-card-action primary">Visit Half of Us</a>
+              </div>
+            </div>
+
+            <div class="res-card reveal">
+              <div class="res-card-name"><a href="https://www.khanacademy.org/college-careers-more/mental-health" target="_blank" rel="noopener">Khan Academy — Mental Health</a></div>
+              <p class="res-card-tagline">Free video lessons on mental health basics</p>
+              <p class="res-card-desc">Khan Academy partnered with the American Society of Clinical Oncology and mental health experts to create a free video series covering anxiety, depression, trauma, and related topics. The format is approachable and well-suited for students who prefer watching to reading. Not a substitute for professional care, but a useful starting point for building understanding.</p>
+              <div class="res-card-actions">
+                <a href="https://www.khanacademy.org/college-careers-more/mental-health" target="_blank" rel="noopener" class="res-card-action primary">Watch Free Lessons</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <p class="footer-logo">FitToday</p>
+        <p class="footer-tagline">Youth mental health for a new era. Founded 2020.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <p class="footer-col-title">Navigate</p>
+          <a href="/#about">About</a>
+          <a href="/resources.html">Resources</a>
+          <a href="/blog/">Blog</a>
+          <a href="/#access">App &amp; Book</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Connect</p>
+          <a href="https://www.instagram.com/fit2day_official/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.linkedin.com/company/fittoday-co/about/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://fittoday.health" target="_blank" rel="noopener">FitToday App</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Legal</p>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 FitToday. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/fit2day_official/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/fittoday-co/about/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
